@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  trafego-app:
+    build:
+      context: .  # Diretório onde o Dockerfile está localizado
+      dockerfile: Dockerfile  # Nome do Dockerfile
+    ports:
+      - "8080:8080"  # Mapeia a porta 8080 do contêiner para a porta 8080 da máquina host
+    environment:
+      SPRING_APPLICATION_NAME: trafego
+      SPRING_DATASOURCE_URL: jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL
+      SPRING_DATASOURCE_USERNAME: rm99266
+      SPRING_DATASOURCE_PASSWORD: 160596
+      SPRING_SECURITY_USER_NAME: willian
+      SPRING_SECURITY_USER_PASSWORD: 123
